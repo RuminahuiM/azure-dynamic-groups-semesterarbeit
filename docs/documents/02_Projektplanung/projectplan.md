@@ -85,6 +85,7 @@ Zu Projektbeginn habe ich fünf aufeinanderfolgende Sprints definiert, um die Ar
 ## Sprint 1: Analyse & Projektplanung
 
 In Sprint 1 lag der Fokus auf der Aufnahme und Strukturierung aller Anforderungen sowie der Erstellung des initialen Projektplans. Wichtige Aktivitäten waren:
+
 - Einholen und Dokumentieren der Projektanforderungen (ADG‑7)
 - Durchführung einer SWOT‑Analyse zur Einschätzung von Stärken, Schwächen, Chancen und Risiken (ADG‑16)
 - Definition der benötigten Abteilungs‑Gruppen und Berechtigungen (ADG‑15)
@@ -93,6 +94,7 @@ In Sprint 1 lag der Fokus auf der Aufnahme und Strukturierung aller Anforderung
 ## Sprint 2: Architektur & Governance-Konzept
 
 Ziel von Sprint 2 war die Entwicklung des Architekturrahmens sowie der Governance-Richtlinien für die dynamische Gruppenverwaltung. Kernaufgaben umfassten:
+
 - Erstellen einer allgemeinen Konzeptübersicht (ADG-18)
 - Definition und Dokumentation einer Naming Policy für Abteilungsgruppen (ADG‑24)
 - Konzeption und erste Implementierung des Azure Automation Runbooks zur dynamischen Security Group Provisionierung (ADG‑22)
@@ -101,6 +103,7 @@ Ziel von Sprint 2 war die Entwicklung des Architekturrahmens sowie der Governan
 ## Sprint 3: Proof of Concept
 
 Im dritten Sprint wurde ein Proof of Concept aufgebaut, um die Automatisierung der Gruppen- und Mailinglisten-Erstellung in einer Testumgebung zu validieren. Wichtige Schritte waren:
+
 - Implementierung des Skripts zur automatischen Erstellung der Abteilungsgruppen (ADG‑28)
 - Aufbau eines Inventar-Frameworks und Festlegung der Ablagestruktur (ADG‑30)
 - Fuktionalität der bisher erstellten Runbooks gewährleisten.
@@ -108,6 +111,7 @@ Im dritten Sprint wurde ein Proof of Concept aufgebaut, um die Automatisierung d
 ## Sprint 4: Abschluss Proof of Concept & Pilotphase
 
 Sprint 4 diente der Fertigstellung des Proof of Concept und dem Start der Pilotphase in der Live-Umgebung. Wesentliche Aufgaben:
+
 - Pilotierung der Mailverteilerlisten für die Service-Abteilung (ADG‑34)
 - Einrichtung einer Testgruppe für ICT‑Assets (ADG‑35)
 - Durchführung der Pilotphasen für ausgewählte Abteilungen & Review selbiger erstellen (ADG-37)
@@ -115,6 +119,7 @@ Sprint 4 diente der Fertigstellung des Proof of Concept und dem Start der Pilot
 ## Sprint 5: Anpassungen & Ausblick
 
 Obwohl Sprint 5 formell nach der Abgabe der Semesterarbeit verortet ist, enthält er die geplanten Folgeanpassungen und Erweiterungen:
+
 - Definition des Onboarding-Prozesses für Digital Assets (ADG‑53)
 - Umsetzung der während der Pilotphase identifizierten Optimierungen
 - Strukturierung und Dokumentation aller Prozesse und Inventarlisten für den Rollout
@@ -155,6 +160,7 @@ Ein klar strukturierter Kommunikationsplan stellt sicher, dass alle Beteiligten 
 **Verantwortlich:** Verantwortliche für Kommunikation
 **Zielgruppe:** Pilotabteilungen (Services, ICT)
 **Massnahmen:**
+
 - Versand einer technischen Einführung und Anleitung per E‑Mail
 - Organisation allfälliger online Einführungen für die zu implementierende Prozesse
 - Bereitstellung eines zentralen Feedback-Forms
@@ -162,6 +168,7 @@ Ein klar strukturierter Kommunikationsplan stellt sicher, dass alle Beteiligten 
 ## Geplanter Rollout in allen Abteilungen
 
 Für den finalen Rollout wird jede Abteilung einzeln angesprochen, um folgende Punkte sicherzustellen:
+
 - Individuelle Abstimmung der benötigten Digital Assets, die aufgenommen werden müssen
 - Erfassung aller relevanten Abteilungsdaten (Berechtigungen, Mailinglisten, Share‑Berechtigungen)
 - Dokumentation der Ergebnisse in der zentralen Asset-Inventarliste

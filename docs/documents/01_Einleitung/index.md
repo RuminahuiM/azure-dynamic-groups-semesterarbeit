@@ -29,26 +29,33 @@ Die HR‑Userdaten wurden teilweise bereits über ein script synchronisiert. All
 ### Funktionale Anforderungen
 
 **Stammdaten & Inventar**
+
 - Zentrale SharePoint/MS Lists-Liste aller Abteilungen & Sub-Abteilungen mit Codes, Beschreibungen, Ownern und Parent-Child-Beziehungen
 
 **Dynamic Group Provisioning**
+
 - Mail-Enabled Distribution Groups und Security Groups mit automatischer Mitgliedschaft über Abteilungscode-Query
 
 **Naming Policy & Fallback**
+
 - Azure AD Naming Policy gemäss definition des ICT Teams
 - Fallback-Gruppe "General” (oder "undefined") für ungültige Codes, inklusive Review-Workflow
 
 **Request & Approval**
+
 - Microsoft Forms in SharePoint → Logic Apps → Multi-Stage-Approval (Antragsteller → Abteilungs-Owner → IT) → automatisierte Gruppenprovisionierung (z.B. für neue Abteilungen oder Mailverteiler)
 
 **Kommunikation & Benachrichtigung**
+
 - Automatische E-Mail/Teams-Alerts bei Group-Creation, Code-Changes, Decommissioning
 
 **Lebenszyklus & Reviews**
+
 - Gruppen-Expiration Policy (z.B. Archivierung nach 180 Tagen Inaktivität)
 - Jährliche Access Reviews (optional)
 
 **Test- und Validierungsframework**
+
 - Wird mit der Pilotgruppe ICT getestet, sobald Konzept und Workflows definiert sind
 
 ----
@@ -56,22 +63,28 @@ Die HR‑Userdaten wurden teilweise bereits über ein script synchronisiert. All
 ### Prozessanforderungen
 
 **Abteilungs-Lifecycle**
+
 - Erstellen, Ändern, archivieren von Abteilungen mit Forms/SharePoint-List Intake, Genehmigungsworkflow, Inventory-Update und Provisioning
 
 **Sub-Abteilungen / Rollen**
+
 - Analog zu Top-Level, zusätzliche Assets nur für spezifische Sub-Gruppen (implizite Vererbung über Gruppenzugehörigkeit)
 - Zuweisung von Sub-Abteilungen muss definiert werden (dynamic groups können nicht einander zugewiesen werden. Muss also über die Query gehandelt werden)
 
 **Mailing-List-Management**
+
 - Request (Forms), Provisioning (Exchange DG), Update (Owner driven bei individuellen Listen) und Decommission (Inaktivitätsreview)
 
 **Asset-Management**
+
 - Zentrales Katalogisieren, Zuweisen, Ändern und Entfernen von Assets manuell von System Engineers
 
 **Onboarding / Offboarding**
+
 - HR-Sync extensionAttribute → Azure AD Connect → Gruppenmitgliedschaft → Asset-Benachrichtigung bzw. bei Offboarding Lizenz-Entzug & Mailbox-Deaktivierung
 
 **Change Management & Testing**
+
 - JIRA-Change Requests für Änderungen an den Flows oder Definitionen
 - Changes werden von System Engineers gehandhabt
 
@@ -96,10 +109,12 @@ Innerhalb der Semesterabeit ist das Ziel, eine Pilotphase mit der Abteilung ICT 
 ## Abgrenzung (Scope)
 
 **In Scope:**
+
 - Konzeption & Implementierung dynamischer Azure AD-Gruppen inkl. zugehöriger Prozesse
 - Pilotierung in ICT-Abteilung
 
 **Out of Scope:**
+
 - Auditing & Monitoring
 - Vollständige Integration weiterer Systeme nach Projektabschluss
 - Vervollständigung des Asset Inventars

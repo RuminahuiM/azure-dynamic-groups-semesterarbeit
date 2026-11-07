@@ -14,6 +14,7 @@ Funktioniert grundsätzlich; der Trigger für die tägliche Ausführung ist noch
 
 ### Review & Bewertung
 Das Artefakt erfüllt die Anforderungen eines Proof of Concept. Vor dem produktiven Einsatz müssen jedoch:
+
 - das Rollback-Skript stabilisiert und umfassend getestet werden  
 - ein Alerting für fehlgeschlagene Ausführungen eingerichtet werden  
 
@@ -75,6 +76,7 @@ Die Anforderungen wurden nicht erfüllt. Die Architektur für Alerting (Azure Mo
 # Zusammenfassung der Ergebnisse
 
 Die umgesetzten Artefakte im Proof of Concept haben sich als tragfähig erwiesen:  
+
 - Die **SwissSalary-zu-AD-Synchronisation** liefert konsistente und verlässliche Benutzerattribute.  
 - Die **Mailverteiler-Generierung** automatisiert die Verteilung nahezu fehlerfrei, mit einer kleinen Einschränkung bei Mehrfachcodes die noch gelöst wird.  
 - Das **Asset Assignment Handling** funktioniert zuverlässig und stellt Berechtigungen automatisiert bereit.  

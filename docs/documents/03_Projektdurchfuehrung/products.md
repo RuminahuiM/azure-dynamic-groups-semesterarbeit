@@ -15,6 +15,7 @@ Dieses Artefakt war ursprünglich nicht als Teil dieses Projekts geplant, hat si
 Diese Vorgehensweise führte zu Inkonsistenzen, hohem manuellem Aufwand und lückenhafter Datenaktualität, da nicht alle erforderlichen Attribute synchronisiert wurden.
 
 **Welche Benutzer-Daten werden Synchronisiert?** 
+
 - EmployeeID: ID auss SwissSalary
 - Surname
 - Firstname
@@ -42,17 +43,22 @@ Nachfolgend eine strukturierte Übersicht des Prozessablaufs:
 
 1. **Datenpflege im HR-System**  
    Die HR-Verantwortlichen passen Mitarbeiterattribute (z. B. Abteilung, Standort, Sprache) in SwissSalary (Business Central) an.  
+
 2. **Erzeugung des Power BI-Reports**  
    Ein Dataflow in Power BI erstellt täglich einen Report aller aktiven Benutzer und deren Abteilungszuordnung.  
+
 3. **Persistierung im Data Lake**  
    Die Power BI-Reports werden automatisch als CSV-Dateien im Azure Data Lake Gen2 (Storage Account) abgelegt.  
+
 4. **Start des Runbooks "Get-PBIUserData"**  
    Ein geplanter Trigger im Azure Automation Account löst einmal täglich das Runbook **Get-PBIUserData** aus.  
+
    - Liest die neuesten CSVs aus dem Storage Container ein  
    - Wandelt die Daten in JSON um  
    - Startet das zweite Runbook **Update-UserdataLocalAD** auf dem Hybrid Runbook Worker  
 5. **AD-Aktualisierung auf dem Hybrid Worker**  
    Das Runbook **Update-UserdataLocalAD** vergleicht die JSON-Daten mit dem aktuellen lokalen AD-Zustand und:  
+
    - Aktualisiert geänderte Attribute  
    - Protokolliert Abweichungen und wirft bei kritischen Änderungen Alarme  
 6. **Backup & Rollback-Vorbereitung**  
@@ -709,12 +715,16 @@ Ursprünglich nutzte ich für die Queries einen benutzerdefinierten Advanced-Fil
 
 1. **Lesen der Abteilungsdaten**  
    Das Script lädt die aktuellste Abteilungsliste aus dem Azure Storage Account (derzeit Power BI-CSV, zukünftig MS List).  
+
 2. **Parameter-Vorbereitung**  
    Vorlage aller notwendigen Filterparameter für jede Abteilung.  
+
 3. **Sub-Abteilungen ermitteln**  
    Ermitteln aller Sub-Abteilungen anhand des `ParentCode` und Zusammenstellung der Codes.  
+
 4. **Vergleich & Neuanlage**  
    Abgleich vorhandener Verteilerlisten mit den berechneten Filtern – bei fehlenden Listen erfolgt die Neuanlage.  
+
 5. **Aktualisierung bestehender Verteiler**  
    Bei Änderungen in den Abteilungsdaten passt das Script die Filter der bereits bestehenden Verteiler entsprechend an.  
 
@@ -1514,6 +1524,7 @@ Damit entfällt die manuelle Nachpflege durch Abteilungsleitungen, und alle Anfr
 ## Logging & Auditing
 
 Geplante Erweiterung:  
+
 - **Alerting für fehlgeschlagene Runbook- und Logic App-Ausführungen** über Azure Monitor Alerts / Log Analytics  
 - **Audit-Logs** aller wichtigen Schritte (Sync, Provisionierung, Asset-Zuweisung) in einem zentralen Log Analytics Workspace  
 

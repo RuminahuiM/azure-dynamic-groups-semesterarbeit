@@ -8,6 +8,7 @@ Die HR-Daten werden in Business Central (SwissSalary-Modul) verwaltet und über 
 
 **Dataflow und Berichtserstellung**
 In Zusammenarbeit mit dem Power BI-Spezialisten wurde ein Dataflow angelegt, der die relevanten Tabellen (Mitarbeiterstammdaten und Abteilungsinventar) extrahiert und in zwei CSV-Dateien im Data Lake abspeichert.
+
 - Tabelle "Mitarbeiter": Enthält Benutzerattribute wie Abteilungs- und Sprachcodes.
 - Tabelle "Abteilungen": Liste aller gültigen Abteilungscodes mit Bezeichnung.
 
@@ -53,6 +54,7 @@ Für Credentials, die nicht über Managed Identity abgedeckt werden können, wir
 - **Service User SharePoint:** Anmeldedaten für SharePoint-API-Zugriffe in einer unterstützenden Logic App
 
 *Screenshot aus der Arbeitsumgebung. Er enthält interne Ressourcen-IDs und wird deshalb hier nicht veröffentlicht.*
+
 ----
 
 ## Hybrid Runbook Worker 
@@ -75,6 +77,7 @@ In der Liste **"Departments Inventory"** werden Abteilungen gepflegt, da die HR-
 Ursprünglich war geplant, zusätzlich eine dynamische Sicherheitsgruppe pro Abteilung anzulegen. Dieser Schritt wurde jedoch aufgrund eines technischen Limitationsfehlers (siehe Kapitel "Herausforderungen & Lösungen") vorerst ausgesetzt.
 
 **Felder der MS List "Departments Inventory"**  
+
 - **Title:** Name der Abteilung  
 - **AssignedAssets:** Dropdown-Auswahl aus dem **Digital Assets Catalog**; Komma-getrennte Liste der Asset-Namen (z. B. "Intune, EntraAdmin, SRV-SharepointSite")  
 - **AssignedAssetsSecurityGroups:** Dropdown-Auswahl aus dem Katalog; Komma-getrennte Liste der zugehörigen SecurityGroup-Namen  
@@ -88,6 +91,7 @@ Ursprünglich war geplant, zusätzlich eine dynamische Sicherheitsgruppe pro Abt
 In der Liste **"Digital Assets Catalog"** werden alle Digital Assets erfasst, die automatisiert zugewiesen werden können. Jedes Asset ist einer eigenen dynamischen Sicherheitsgruppe zugeordnet. System Engineers wählen aus dieser Liste die gewünschten Assets aus, die auf Abteilungsebene zugewiesen werden sollen. Die Runbooks nutzen die Einträge zur Erstellung und Zuweisung der entsprechenden Gruppen.
 
 **Felder der MS List "Digital Assets Catalog"**  
+
 - **Title:** Name des Digital Assets  
 - **SecurityGroup:** Dynamische Sicherheitsgruppe für die Asset-Zuweisung  
 - **Description:** Beschreibung des Assets und dessen Einsatzzweck  
