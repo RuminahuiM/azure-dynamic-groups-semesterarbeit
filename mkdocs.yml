@@ -1,0 +1,77 @@
+site_name: Azure Dynamic Groups
+site_description: "Access Governance mit dynamischen Gruppen in Azure. Semesterarbeit 1, ITCNE25, TBZ HF"
+site_author: Dodoe Rumiñahui Mannale
+site_url: https://ruminahuim.github.io/azure-dynamic-groups-semesterarbeit/
+repo_url: https://github.com/RuminahuiM/azure-dynamic-groups-semesterarbeit
+repo_name: RuminahuiM/azure-dynamic-groups-semesterarbeit
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: de
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Dunkles Design
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Helles Design
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search:
+      lang: de
+
+validation:
+  links:
+    anchors: warn
+
+nav:
+  - Start: index.md
+  - Einleitung: documents/01_Einleitung/index.md
+  - Projektplanung:
+      - documents/02_Projektplanung/index.md
+      - Konzeptentwurf und Architektur: documents/02_Projektplanung/concept.md
+      - Projektplanung: documents/02_Projektplanung/projectplan.md
+      - Risikomanagement: documents/02_Projektplanung/riskmanagement.md
+  - Projektdurchführung:
+      - documents/03_Projektdurchfuehrung/index.md
+      - Environment Setup: documents/03_Projektdurchfuehrung/environment.md
+      - Produkte und Artefakte: documents/03_Projektdurchfuehrung/products.md
+      - Herausforderungen und Lösungen: documents/03_Projektdurchfuehrung/problems.md
+      - Sprint Reviews: documents/03_Projektdurchfuehrung/sprintreviews.md
+  - Ergebnisse: documents/04_Ergebnisse/index.md
+  - Fazit und Ausblick: documents/05_Fazit/index.md
+  - Anhänge:
+      - documents/06_Anhaenge/index.md
+      - Glossar: documents/06_Anhaenge/glossar.md
